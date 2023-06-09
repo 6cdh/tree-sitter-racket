@@ -174,11 +174,7 @@ module.exports = grammar({
             number_base(2),
             number_base(8),
             number_base(10),
-            number_base(16),
-            seq(
-              optional(/[+-]/),
-              /(inf|nan)\.[0ft]/
-            )))),
+            number_base(16)))),
 
     decimal: _ => /[0-9]+/,
 
