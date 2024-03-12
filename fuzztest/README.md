@@ -4,22 +4,23 @@ The directory contains the scripts that test the implementation to avoid the pro
 
 ## Resource
 
-* ~6 minutes to run
-* ~300M generated files
+* Racket 8.11.1 (cs)
+* ~3 minutes to run
+* 288M generated files
 
 ## Run
 
 ```shell
 $ cd fuzztest
-# 30s
+# 18s
 $ racket gen_cases.rkt
-cpu time: 26531 real time: 26835 gc time: 1069
-5114173 cases generated
+cpu time: 17972 real time: 18077 gc time: 475
+5156699 cases generated
 $ cd ..
 $ tree-sitter generate
-# 3 minutes
+# 92s
 $ tree-sitter parse fuzztest/case.txt > fuzztest/res1.txt
-# 2 minutes
+# 50s
 $ cd fuzztest && racket postprocess.rkt
 # should show nothing
 $ sdiff -s <(cat -n expect.txt) <(cat -n res.txt)
