@@ -10,12 +10,15 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
+      - name: Set up the repo
+        uses: tree-sitter/parser-setup-action@v1.1
         with:
-          node-version: 16
-      - run: npm install
-      - run: npm test
+          node-version: ${{vars.NODE_VERSION}}
+      - name: Run tests
+        uses: tree-sitter/parser-test-action@v1.2
+        with:
+          test-library: ${{runner.os == 'Linux'}}
+          corpus-files: corpus/*
 
   racket:
     runs-on: ubuntu-latest
