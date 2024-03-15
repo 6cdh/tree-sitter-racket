@@ -66,10 +66,43 @@
     (symbol)* @variable.parameter)
   (#match? @keyword "^(define|define/contract)$"))
 
-(sexp_comment
-  _* @comment)
+;; quote ;;
 
-(sexp_comment
-  (_ _* @comment)* @comment)
+;; hardcoded highlight four levels of nested structure
 
+; 'atom
+(quote
+  _ @constant)
+
+; '()
+(quote
+  (_ _* @constant))
+
+; '(())
+(quote
+  (_ (_ _* @constant)*))
+
+; '((()))
+(quote
+  (_ (_ (_ _* @constant)*)*))
+
+;; sexp comment ;;
+
+;; hardcoded highlight four levels of nested structure
+
+; #;atom
+(sexp_comment
+  _ @comment)
+
+; #;(list)
+(sexp_comment
+  (_ _* @comment))
+
+; #;(list (list))
+(sexp_comment
+  (_ (_ _* @comment)*))
+
+; #;(list (list (list)))
+(sexp_comment
+  (_ (_ (_ _ @comment)*)*))
 
