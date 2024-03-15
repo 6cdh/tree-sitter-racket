@@ -20,12 +20,15 @@
     (symbol)
     .
     (symbol)+ @local.definition)
-  (#match? @reference._def "^(define|define/contract|define-syntax-rule)$")) @local.scope
+  (#match? @reference._def "^(define|define/contract)$")) @local.scope
 
 (list
   .
   (symbol) @reference._def
   .
-  (symbol) @local.definition
+  [(symbol) @local.definition
+   (list
+     .
+     (symbol)+ @local.definition)]
   (#match? @reference._def "^(lambda|λ)$")) @local.scope
 
