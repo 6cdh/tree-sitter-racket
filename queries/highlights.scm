@@ -13,9 +13,6 @@
 (boolean) @constant.builtin
 (keyword) @constant
 
-[(comment)
- (block_comment)] @comment
-
 (extension) @keyword
 (lang_name) @variable.builtin
 
@@ -80,11 +77,11 @@
 
 ; '(())
 (quote
-  (_ (_ _* @constant)*))
+  (_ (_ _* @constant)))
 
 ; '((()))
 (quote
-  (_ (_ (_ _* @constant)*)*))
+  (_ (_ (_ _* @constant))))
 
 ;; sexp comment ;;
 
@@ -100,9 +97,12 @@
 
 ; #;(list (list))
 (sexp_comment
-  (_ (_ _* @comment)*))
+  (_ (_ _* @comment)))
 
 ; #;(list (list (list)))
 (sexp_comment
-  (_ (_ (_ _ @comment)*)*))
+  (_ (_ (_ _ @comment))))
+
+[(comment)
+ (block_comment)] @comment
 
