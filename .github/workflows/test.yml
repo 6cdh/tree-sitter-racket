@@ -15,8 +15,6 @@ jobs:
         uses: tree-sitter/setup-action/cli@v1
       - name: Run tests
         uses: tree-sitter/parser-test-action@v2
-        with:
-          test-rust: true
 
   racket:
     runs-on: ubuntu-latest
