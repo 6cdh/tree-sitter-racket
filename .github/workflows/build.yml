@@ -11,4 +11,4 @@ jobs:
       - name: Set up tree sitter
         uses: tree-sitter/setup-action/cli@v1
       - name: wasm build
-        run: tree-sitter build -w
+        run: tree-sitter build -w -o tree-sitter-racket.wasm
