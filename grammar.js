@@ -7,20 +7,20 @@ const LEAF = {
   // https://en.wikipedia.org/wiki/Unicode_character_property#Whitespace
   whitespace: /[ \t\n\v\f\r\u{0085}\u{00A0}\u{1680}\u{2000}-\u{200A}\u{2028}\u{2029}\u{202F}\u{205F}\u{3000}]+/u,
   newline: /[\r\n\u{85}\u{2028}\u{2029}]/,
-  delimiter: /[ \t\n\v\f\r\u{0085}\u{00A0}\u{1680}\u{2000}-\u{200A}\u{2028}\u{2029}\u{202F}\u{205F}\u{3000}\u{FEFF}(){}",'`;\[\]]/u,
-  non_delimiter: /[^ \t\n\v\f\r\u{0085}\u{00A0}\u{1680}\u{2000}-\u{200A}\u{2028}\u{2029}\u{202F}\u{205F}\u{3000}\u{FEFF}(){}",'`;\[\]]/u,
+  delimiter: /[ \t\n\v\f\r\u{0085}\u{00A0}\u{1680}\u{2000}-\u{200A}\u{2028}\u{2029}\u{202F}\u{205F}\u{3000}\u{FEFF}\(\)\{\}",'`;\[\]]/u,
+  non_delimiter: /[^ \t\n\v\f\r\u{0085}\u{00A0}\u{1680}\u{2000}-\u{200A}\u{2028}\u{2029}\u{202F}\u{205F}\u{3000}\u{FEFF}\(\)\{\}",'`;\[\]]/u,
 
   // first character of symbol
   symbol_start:
     choice(
-      /[^# \t\n\v\f\r\u{0085}\u{00A0}\u{1680}\u{2000}-\u{200A}\u{2028}\u{2029}\u{202F}\u{205F}\u{3000}\u{FEFF}(){}",'`;\[\]\|\\]/u,
+      /[^# \t\n\v\f\r\u{0085}\u{00A0}\u{1680}\u{2000}-\u{200A}\u{2028}\u{2029}\u{202F}\u{205F}\u{3000}\u{FEFF}\(\)\{\}",'`;\[\]\|\\]/u,
       "#%",
-      /\|[^|]*\|/,
+      /\|[^\|]*\|/,
       /\\./),
   symbol_remain:
     choice(
       /[^ \t\n\v\f\r\u{0085}\u{00A0}\u{1680}\u{2000}-\u{200A}\u{2028}\u{2029}\u{202F}\u{205F}\u{3000}\u{FEFF}(){}",'`;\[\]\|\\]/u,
-      /\|[^|]*\|/,
+      /\|[^\|]*\|/,
       /\\./),
 
   any_char: /.|[\r\n\u{85}\u{2028}\u{2029}]/,
@@ -64,8 +64,7 @@ module.exports = grammar({
 
     comment: $ =>
       choice(
-        token(
-          seq(/;.*/)),
+        token(/;.*/),
         $._line_comment),
 
     block_comment: $ =>
