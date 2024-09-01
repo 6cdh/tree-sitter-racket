@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-racket",
-  "version": "0.3.0",
+  "version": "0.23.0",
   "description": "Tree-sitter grammar for Racket",
   "main": "bindings/node",
   "types": "bindings/node",
