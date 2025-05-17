@@ -16,7 +16,7 @@ jobs:
         with:
           tree-sitter-ref: v0.24.7
       - name: Run tests
-        uses: tree-sitter/parser-test-action@v2
+        run: tree-sitter test
 
   racket:
     runs-on: ubuntu-latest
