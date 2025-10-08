@@ -1,4 +1,4 @@
-"""Racket grammar for tree-sitter"""
+"""Racket parser for tree-sitter"""
 
 from importlib.resources import files as _files
 

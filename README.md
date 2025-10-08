@@ -2,7 +2,7 @@
 
 [![Test](https://github.com/6cdh/tree-sitter-racket/actions/workflows/test.yml/badge.svg)](https://github.com/6cdh/tree-sitter-racket/actions/workflows/test.yml)
 
-Racket grammar for tree-sitter.
+Racket parser for tree-sitter.
 
 This grammar only implements the Racket language with the default readtable.
 

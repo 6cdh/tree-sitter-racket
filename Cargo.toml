@@ -1,13 +1,13 @@
 [package]
 name = "tree-sitter-racket"
-description = "Racket grammar for tree-sitter"
+description = "Racket parser for tree-sitter"
 version = "0.24.7"
 authors = ["6cdh"]
 license = "MIT"
 readme = "README.md"
 keywords = ["incremental", "parsing", "tree-sitter", "racket"]
 categories = ["parsing", "text-editors"]
-repository = "https://github.com/tree-sitter/tree-sitter-racket"
+repository = "https://github.com/6cdh/tree-sitter-racket"
 edition = "2021"
 autoexamples = false
 

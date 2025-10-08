@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tree-sitter-racket"
-description = "Racket grammar for tree-sitter"
+description = "Racket parser for tree-sitter"
 version = "0.24.7"
 keywords = ["incremental", "parsing", "tree-sitter", "racket"]
 classifiers = [
