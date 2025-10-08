@@ -1,6 +1,6 @@
 # tree-sitter-racket
 
-[![Test](https://github.com/6cdh/tree-sitter-racket/actions/workflows/test.yml/badge.svg)](https://github.com/6cdh/tree-sitter-racket/actions/workflows/test.yml)
+[![Test](https://github.com/6cdh/tree-sitter-racket/actions/workflows/test.yml/badge.svg)](https://github.com/6cdh/tree-sitter-racket/actions/workflows/test.yml) [![Crates.io Version](https://img.shields.io/crates/v/tree-sitter-racket)](https://crates.io/crates/tree-sitter-racket)
 
 Racket parser for tree-sitter.
 
