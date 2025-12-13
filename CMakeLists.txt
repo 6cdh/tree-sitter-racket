@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-racket
-        VERSION "0.24.7"
+        VERSION "0.24.7-1"
         DESCRIPTION "Racket parser for tree-sitter"
         HOMEPAGE_URL "https://github.com/6cdh/tree-sitter-racket"
         LANGUAGES C)

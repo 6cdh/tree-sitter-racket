@@ -4,7 +4,7 @@ endif
 
 LANGUAGE_NAME := tree-sitter-racket
 HOMEPAGE_URL := https://github.com/6cdh/tree-sitter-racket
-VERSION := 0.24.7
+VERSION := 0.24.7-1
 
 # repository
 SRC_DIR := src

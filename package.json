@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-racket",
-  "version": "0.23.0",
+  "version": "0.24.7-1",
   "description": "Tree-sitter parser for Racket",
   "main": "bindings/node",
   "types": "bindings/node",
