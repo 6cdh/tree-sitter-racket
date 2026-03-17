@@ -1,5 +1,5 @@
 {
-  "name": "tree-sitter-racket",
+  "name": "@6cdh/tree-sitter-racket",
   "version": "0.24.7-1",
   "description": "Tree-sitter parser for Racket",
   "main": "bindings/node",
