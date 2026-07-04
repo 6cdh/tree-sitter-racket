@@ -8,7 +8,7 @@ This grammar only implements the Racket language with the default readtable.
 
 ## Status
 
-It should be complete and compatible with Racket 8.9.
+It should be complete and compatible with Racket 9.2.
 
 There are no plans to add support for new language currently.
 
