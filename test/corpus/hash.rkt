@@ -3,6 +3,7 @@ hash table
 ===
 
 #hash()
+#hashalw()
 #hasheq()
 #hash(("a" . 5))
 #hasheq(("a" . 5) ("b" . 7))
@@ -11,6 +12,8 @@ hash table
 ---
 
 (program
+  (hash
+    (list))
   (hash
     (list))
   (hash

@@ -228,7 +228,7 @@ module.exports = grammar({
 
     hash: $ =>
       seq(
-        choice("#hash", "#hasheq", "#hasheqv"),
+        choice("#hash", "#hashalw", "#hasheq", "#hasheqv"),
         $.list),
 
     graph: $ =>
