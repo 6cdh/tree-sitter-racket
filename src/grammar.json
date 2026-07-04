@@ -58,8 +58,20 @@
         {
           "type": "TOKEN",
           "content": {
-            "type": "PATTERN",
-            "value": ";.*"
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": ";"
+              },
+              {
+                "type": "REPEAT",
+                "content": {
+                  "type": "PATTERN",
+                  "value": "[^\\r\\n\\u{85}\\u{2028}\\u{2029}]"
+                }
+              }
+            ]
           }
         },
         {
@@ -149,8 +161,11 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "PATTERN",
-                  "value": ".*"
+                  "type": "REPEAT",
+                  "content": {
+                    "type": "PATTERN",
+                    "value": "[^\\r\\n\\u{85}\\u{2028}\\u{2029}]"
+                  }
                 },
                 {
                   "type": "STRING",
@@ -164,8 +179,11 @@
             }
           },
           {
-            "type": "PATTERN",
-            "value": ".*"
+            "type": "REPEAT",
+            "content": {
+              "type": "PATTERN",
+              "value": "[^\\r\\n\\u{85}\\u{2028}\\u{2029}]"
+            }
           }
         ]
       }

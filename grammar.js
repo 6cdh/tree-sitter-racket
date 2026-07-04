@@ -7,6 +7,7 @@ const LEAF = {
   // https://en.wikipedia.org/wiki/Unicode_character_property#Whitespace
   whitespace: /[ \t\n\v\f\r\u{0085}\u{00A0}\u{1680}\u{2000}-\u{200A}\u{2028}\u{2029}\u{202F}\u{205F}\u{3000}]+/u,
   newline: /[\r\n\u{85}\u{2028}\u{2029}]/,
+  non_newline: /[^\r\n\u{85}\u{2028}\u{2029}]/,
   delimiter: /[ \t\n\v\f\r\u{0085}\u{00A0}\u{1680}\u{2000}-\u{200A}\u{2028}\u{2029}\u{202F}\u{205F}\u{3000}\u{FEFF}\(\)\{\}",'`;\[\]]/u,
   non_delimiter: /[^ \t\n\v\f\r\u{0085}\u{00A0}\u{1680}\u{2000}-\u{200A}\u{2028}\u{2029}\u{202F}\u{205F}\u{3000}\u{FEFF}\(\)\{\}",'`;\[\]]/u,
 
@@ -64,7 +65,7 @@ module.exports = grammar({
 
     comment: $ =>
       choice(
-        token(/;.*/),
+        token(seq(";", repeat(LEAF.non_newline))),
         $._line_comment),
 
     block_comment: $ =>
@@ -84,8 +85,8 @@ module.exports = grammar({
       token(
         seq(
           choice("#! ", "#!/"),
-          repeat(seq(/.*/, "\\", LEAF.newline)),
-          /.*/)),
+          repeat(seq(repeat(LEAF.non_newline), "\\", LEAF.newline)),
+          repeat(LEAF.non_newline))),
 
     // comment }}}
 
