@@ -14,7 +14,7 @@ There are no plans to add support for new language currently.
 
 ## News
 
-**Breaking change (`graph`):** `graph` no longer has a `decimal` child.
+**Breaking change (`graph`):** Starting from August 22, 2026, `graph` no longer has a `decimal` child.
 
 The old rule used `[0-9]+` for the id. That was incorrect. The Racket Reader, 1.3.17, allows only 1-8 decimal digits. A bind (`#1=...`) is now `graph` plus the tagged datum. A reference (`#1#`) is a leaf `graph`.
 
