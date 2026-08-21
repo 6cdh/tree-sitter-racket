@@ -15,7 +15,7 @@ jobs:
         uses: tree-sitter/setup-action/cli@v1
         with:
           tree-sitter-ref: v0.24.7
-      - name: Generate unicode comment corpus
+      - name: Generate corpus tests
         run: node test/scripts/gen-corpus.mjs
       - name: Run tests
         run: tree-sitter test

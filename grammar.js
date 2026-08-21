@@ -4,8 +4,9 @@ const PREC = {
 };
 
 const LEAF = {
-  // https://en.wikipedia.org/wiki/Unicode_character_property#Whitespace
-  whitespace: /[ \t\n\v\f\r\u{0085}\u{00A0}\u{1680}\u{2000}-\u{200A}\u{2028}\u{2029}\u{202F}\u{205F}\u{3000}]+/u,
+  // Unicode whitespace, plus U+FEFF. BOM is not Unicode whitespace, but the
+  // reader treats it like whitespace where comments are allowed.
+  whitespace: /[ \t\n\v\f\r\u{0085}\u{00A0}\u{1680}\u{2000}-\u{200A}\u{2028}\u{2029}\u{202F}\u{205F}\u{3000}\u{FEFF}]+/u,
   newline: /[\r\n\u{85}\u{2028}\u{2029}]/,
   non_newline: /[^\r\n\u{85}\u{2028}\u{2029}]/,
   delimiter: /[ \t\n\v\f\r\u{0085}\u{00A0}\u{1680}\u{2000}-\u{200A}\u{2028}\u{2029}\u{202F}\u{205F}\u{3000}\u{FEFF}\(\)\{\}",'`;\[\]]/u,

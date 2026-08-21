@@ -871,7 +871,7 @@ static const TSStateId ts_primary_state_ids[STATE_COUNT] = {
 
 static TSCharacterRange aux_sym__skip_token1_character_set_1[] = {
   {'\t', '\r'}, {' ', ' '}, {0x85, 0x85}, {0xa0, 0xa0}, {0x1680, 0x1680}, {0x2000, 0x200a}, {0x2028, 0x2029}, {0x202f, 0x202f},
-  {0x205f, 0x205f}, {0x3000, 0x3000},
+  {0x205f, 0x205f}, {0x3000, 0x3000}, {0xfeff, 0xfeff},
 };
 
 static TSCharacterRange sym_escape_sequence_character_set_1[] = {
@@ -908,7 +908,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
         '|', 240,
         '}', 461,
       );
-      if (set_contains(aux_sym__skip_token1_character_set_1, 10, lookahead)) ADVANCE(234);
+      if (set_contains(aux_sym__skip_token1_character_set_1, 11, lookahead)) ADVANCE(234);
       if (lookahead != 0) ADVANCE(239);
       END_STATE();
     case 1:
@@ -943,9 +943,8 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
         '-', 421,
       );
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(270);
-      if (set_contains(aux_sym__skip_token1_character_set_1, 10, lookahead)) ADVANCE(234);
-      if (lookahead != 0 &&
-          lookahead != 0xfeff) ADVANCE(453);
+      if (set_contains(aux_sym__skip_token1_character_set_1, 11, lookahead)) ADVANCE(234);
+      if (lookahead != 0) ADVANCE(453);
       END_STATE();
     case 4:
       ADVANCE_MAP(
@@ -965,12 +964,11 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
         '-', 421,
       );
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(270);
-      if (set_contains(aux_sym__skip_token1_character_set_1, 10, lookahead)) ADVANCE(234);
+      if (set_contains(aux_sym__skip_token1_character_set_1, 11, lookahead)) ADVANCE(234);
       if (lookahead != 0 &&
           (lookahead < '\'' || ')' < lookahead) &&
           (lookahead < '[' || ']' < lookahead) &&
-          (lookahead < '{' || '}' < lookahead) &&
-          lookahead != 0xfeff) ADVANCE(453);
+          (lookahead < '{' || '}' < lookahead)) ADVANCE(453);
       END_STATE();
     case 5:
       if (lookahead == '"') ADVANCE(256);
@@ -2183,19 +2181,18 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
         '-', 421,
       );
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(270);
-      if (set_contains(aux_sym__skip_token1_character_set_1, 10, lookahead)) ADVANCE(234);
+      if (set_contains(aux_sym__skip_token1_character_set_1, 11, lookahead)) ADVANCE(234);
       if (lookahead != 0 &&
           (lookahead < '\'' || ')' < lookahead) &&
           (lookahead < '[' || ']' < lookahead) &&
-          (lookahead < '{' || '}' < lookahead) &&
-          lookahead != 0xfeff) ADVANCE(453);
+          (lookahead < '{' || '}' < lookahead)) ADVANCE(453);
       END_STATE();
     case 233:
       ACCEPT_TOKEN(ts_builtin_sym_end);
       END_STATE();
     case 234:
       ACCEPT_TOKEN(aux_sym__skip_token1);
-      if (set_contains(aux_sym__skip_token1_character_set_1, 10, lookahead)) ADVANCE(234);
+      if (set_contains(aux_sym__skip_token1_character_set_1, 11, lookahead)) ADVANCE(234);
       END_STATE();
     case 235:
       ACCEPT_TOKEN(sym_dot);

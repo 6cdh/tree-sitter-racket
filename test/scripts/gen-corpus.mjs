@@ -75,6 +75,51 @@ line comment ends at U+2029 PARAGRAPH SEPARATOR
   (symbol))
 `;
 
+const bomSkipCorpus = `===
+BOM U+FEFF between symbols is skip
+===
+a\uFEFFb
+
+---
+
+(program
+  (symbol)
+  (symbol))
+
+===
+BOM U+FEFF before a datum is skip
+===
+\uFEFFa
+
+---
+
+(program
+  (symbol))
+
+===
+BOM U+FEFF inside a list is skip
+===
+(a\uFEFFb)
+
+---
+
+(program
+  (list
+    (symbol)
+    (symbol)))
+
+===
+BOM U+FEFF after quote is skip
+===
+'\uFEFFa
+
+---
+
+(program
+  (quote
+    (symbol)))
+`;
+
 const hereStringCrlfCorpus = `===
 here string CRLF empty terminator
 ===
@@ -100,3 +145,4 @@ here string CRLF repeated terminator line
 mkdirSync(generatedDir, { recursive: true });
 writeFileSync(path.join(generatedDir, "line_comment_unicode.rkt"), lineCommentCorpus);
 writeFileSync(path.join(generatedDir, "here_string_crlf.rkt"), hereStringCrlfCorpus);
+writeFileSync(path.join(generatedDir, "bom_skip.rkt"), bomSkipCorpus);
