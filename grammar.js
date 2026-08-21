@@ -198,11 +198,12 @@ module.exports = grammar({
             LEAF.symbol_start,
             repeat(LEAF.symbol_remain)))),
 
+    // Empty #: is not documented, but Racket still allows it.
     keyword: _ =>
       token(
         seq(
           "#:",
-          repeat1(LEAF.symbol_remain))),
+          repeat(LEAF.symbol_remain))),
 
     box: $ =>
       seq(
