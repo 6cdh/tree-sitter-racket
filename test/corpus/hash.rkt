@@ -40,3 +40,33 @@ hash table
         (string)
         (dot)
         (number)))))
+
+===
+hash prefix letter case
+===
+
+#HASH()
+#Hash()
+#HASHEQ()
+#HashEq()
+#HASHEQV()
+#HASHALW()
+#HashAlw()
+
+---
+
+(program
+  (hash
+    (list))
+  (hash
+    (list))
+  (hash
+    (list))
+  (hash
+    (list))
+  (hash
+    (list))
+  (hash
+    (list))
+  (hash
+    (list)))

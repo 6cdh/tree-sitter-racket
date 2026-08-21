@@ -7428,25 +7428,41 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "#hash"
-            },
-            {
-              "type": "STRING",
-              "value": "#hashalw"
-            },
-            {
-              "type": "STRING",
-              "value": "#hasheq"
-            },
-            {
-              "type": "STRING",
-              "value": "#hasheqv"
-            }
-          ]
+          "type": "TOKEN",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "#[hH][aA][sS][hH]"
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "PATTERN",
+                        "value": "[aA][lL][wW]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[eE][qQ][vV]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[eE][qQ]"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              }
+            ]
+          }
         },
         {
           "type": "SYMBOL",

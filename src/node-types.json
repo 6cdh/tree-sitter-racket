@@ -1794,22 +1794,6 @@
     "named": false
   },
   {
-    "type": "#hash",
-    "named": false
-  },
-  {
-    "type": "#hashalw",
-    "named": false
-  },
-  {
-    "type": "#hasheq",
-    "named": false
-  },
-  {
-    "type": "#hasheqv",
-    "named": false
-  },
-  {
     "type": "#lang ",
     "named": false
   },

@@ -229,9 +229,17 @@ module.exports = grammar({
         "#s",
         $.list),
 
+    // Spec shows lowercase prefixes. Racket still allows other letter cases.
     hash: $ =>
       seq(
-        choice("#hash", "#hashalw", "#hasheq", "#hasheqv"),
+        token(
+          seq(
+            /#[hH][aA][sS][hH]/,
+            optional(
+              choice(
+                /[aA][lL][wW]/,
+                /[eE][qQ][vV]/,
+                /[eE][qQ]/)))),
         $.list),
 
     // # plus 1-8 digits plus = or # (The Racket Reader, 1.3.17).
