@@ -234,16 +234,14 @@ module.exports = grammar({
         choice("#hash", "#hashalw", "#hasheq", "#hasheqv"),
         $.list),
 
+    // # plus 1-8 digits plus = or # (The Racket Reader, 1.3.17).
     graph: $ =>
-      seq(
-        "#",
-        $.decimal,
-        choice(
-          "#",
-          seq(
-            "=",
-            repeat($._skip),
-            $._datum))),
+      choice(
+        token(/#[0-9]{1,8}#/),
+        seq(
+          token(/#[0-9]{1,8}=/),
+          repeat($._skip),
+          $._datum)),
 
     quote: $ =>
       seq(

@@ -18,7 +18,7 @@ This page contains all visible nodes in yaml format.
 - character
 - number
 - symbol
-- decimal # [0-9]+ used for graph reference or vector length in literal
+- decimal # [0-9]+ used for vector length in a literal
 
 - keyword # for example, #:abc
 - regex

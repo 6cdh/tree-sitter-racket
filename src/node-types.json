@@ -274,7 +274,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "block_comment",
@@ -298,10 +298,6 @@
         },
         {
           "type": "comment",
-          "named": true
-        },
-        {
-          "type": "decimal",
           "named": true
         },
         {
@@ -1847,10 +1843,6 @@
   },
   {
     "type": ",@",
-    "named": false
-  },
-  {
-    "type": "=",
     "named": false
   },
   {

@@ -10,16 +10,36 @@ graph
 (program
   (list
     (graph
-      (decimal)
       (number))
-    (graph
-      (decimal))
-    (graph
-      (decimal)))
+    (graph)
+    (graph))
   (graph
-    (decimal)
     (list
       (number)
       (dot)
-      (graph
-        (decimal)))))
+      (graph))))
+
+===
+graph id is at most 8 digits
+===
+#12345678=1
+#12345678#
+
+---
+
+(program
+  (graph
+    (number))
+  (graph))
+
+===
+graph id longer than 8 digits
+===
+#123456789=1
+
+---
+
+(program
+  (ERROR
+    (decimal))
+  (symbol))
