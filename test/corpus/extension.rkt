@@ -20,3 +20,13 @@ extension
     (number))
   (extension
     (lang_name)))
+
+===
+lang name must not start with slash
+===
+#lang /foo
+
+---
+
+(program
+  (ERROR))

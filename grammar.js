@@ -303,7 +303,12 @@ module.exports = grammar({
           choice("#lang ", "#!"),
           $.lang_name)),
 
-    lang_name: _ => /[a-zA-Z0-9+_/-]+/,
+    // Must not start or end with / (The Racket Reader, 1.3.18).
+    lang_name: _ =>
+      token(
+        choice(
+          /[a-zA-Z0-9+_-]/,
+          /[a-zA-Z0-9+_-][a-zA-Z0-9+_/-]*[a-zA-Z0-9+_-]/)),
 
   }
 })
