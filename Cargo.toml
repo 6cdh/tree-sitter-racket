@@ -12,7 +12,14 @@ edition = "2021"
 autoexamples = false
 
 build = "bindings/rust/build.rs"
-include = ["LICENSE", "bindings/rust/*", "grammar.js", "queries/*", "src/*", "tree-sitter.json"]
+include = [
+    "/LICENSE",
+    "/grammar.js",
+    "/tree-sitter.json",
+    "/bindings/rust/*",
+    "/queries/*",
+    "/src/**",
+]
 
 [lib]
 path = "bindings/rust/lib.rs"
