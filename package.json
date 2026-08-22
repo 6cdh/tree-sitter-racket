@@ -1,6 +1,6 @@
 {
   "name": "@6cdh/tree-sitter-racket",
-  "version": "0.24.7-1",
+  "version": "0.25.0",
   "description": "Tree-sitter parser for Racket",
   "main": "bindings/node",
   "types": "bindings/node",
@@ -18,10 +18,10 @@
     "node-gyp-build": "^4.8.1"
   },
   "peerDependencies": {
-    "tree-sitter": "^0.21.1"
+    "tree-sitter": "^0.25.0"
   },
   "peerDependenciesMeta": {
-    "tree_sitter": {
+    "tree-sitter": {
       "optional": true
     }
   },
@@ -36,6 +36,9 @@
   ],
   "devDependencies": {
     "prebuildify": "^6.0.1",
-    "tree-sitter-cli": "^0.24.7"
+    "tree-sitter-cli": "^0.26.12"
+  },
+  "allowScripts": {
+    "tree-sitter-cli": true
   }
 }

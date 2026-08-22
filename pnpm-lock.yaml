@@ -15,15 +15,15 @@ importers:
         specifier: ^4.8.1
         version: 4.8.2
       tree-sitter:
-        specifier: ^0.21.1
-        version: 0.21.1
+        specifier: ^0.25.0
+        version: 0.25.1
     devDependencies:
       prebuildify:
         specifier: ^6.0.1
         version: 6.0.1
       tree-sitter-cli:
-        specifier: ^0.24.7
-        version: 0.24.7
+        specifier: ^0.26.12
+        version: 0.26.12
 
 packages:
 
@@ -65,8 +65,16 @@ packages:
     resolution: {integrity: sha512-yBY+qqWSv3dWKGODD6OGE6GnTX7Q2r+4+DfpqxHSHh8x0B4EKP9+wVGLS6U/AM1vxSNNmUEuIV5EGhYwPpfOwQ==}
     engines: {node: ^18 || ^20 || >= 21}
 
+  node-addon-api@8.9.2:
+    resolution: {integrity: sha512-VijLXbi3UACN69I0JVXJsX4tjACjNoQDgv2gTF6sx2wWEi8tkSg2eX8p5gSIFi8z2+DL3oHmY6OyKce38SDolg==}
+    engines: {node: ^18 || ^20 || >= 21}
+
   node-gyp-build@4.8.2:
     resolution: {integrity: sha512-IRUxE4BVsHWXkV/SFOut4qTlagw2aM8T5/vnTsmrHJvVoKueJHRc/JaFND7QDDc61kLYUJ6qlZM3sqTSyx2dTw==}
+    hasBin: true
+
+  node-gyp-build@4.8.4:
+    resolution: {integrity: sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==}
     hasBin: true
 
   npm-run-path@3.1.0:
@@ -109,13 +117,13 @@ packages:
     resolution: {integrity: sha512-ujeqbceABgwMZxEJnk2HDY2DlnUZ+9oEcb1KzTVfYHio0UE6dG71n60d8D2I4qNvleWrrXpmjpt7vZeF1LnMZQ==}
     engines: {node: '>=6'}
 
-  tree-sitter-cli@0.24.7:
-    resolution: {integrity: sha512-o4gnE82pVmMMhJbWwD6+I9yr4lXii5Ci5qEQ2pFpUbVy1YiD8cizTJaqdcznA0qEbo7l2OneI1GocChPrI4YGQ==}
+  tree-sitter-cli@0.26.12:
+    resolution: {integrity: sha512-rIdMAm6nv75MVFoZ7UTaLVB1OG5h3ZSlCZEp5pne4gOUTalJIkL0A1NlYBg0oEl/d7gvIyc2Y5Jz8m5Xj+NOEw==}
     engines: {node: '>=12.0.0'}
     hasBin: true
 
-  tree-sitter@0.21.1:
-    resolution: {integrity: sha512-7dxoA6kYvtgWw80265MyqJlkRl4yawIjO7S5MigytjELkX43fV2WsAXzsNfO7sBpPPCF5Gp0+XzHk0DwLCq3xQ==}
+  tree-sitter@0.25.1:
+    resolution: {integrity: sha512-mrcEdkYtHfrK1A6fs3O6FxkBo0Qig5XUXqHhxUOQu0bmPo00QF4XaSx4edpazdHwxnSCjlGKGgIqWdaN4dvTLA==}
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
@@ -160,7 +168,11 @@ snapshots:
 
   node-addon-api@8.1.0: {}
 
+  node-addon-api@8.9.2: {}
+
   node-gyp-build@4.8.2: {}
+
+  node-gyp-build@4.8.4: {}
 
   npm-run-path@3.1.0:
     dependencies:
@@ -215,12 +227,12 @@ snapshots:
       inherits: 2.0.4
       readable-stream: 3.6.2
 
-  tree-sitter-cli@0.24.7: {}
+  tree-sitter-cli@0.26.12: {}
 
-  tree-sitter@0.21.1:
+  tree-sitter@0.25.1:
     dependencies:
-      node-addon-api: 8.1.0
-      node-gyp-build: 4.8.2
+      node-addon-api: 8.9.2
+      node-gyp-build: 4.8.4
 
   util-deprecate@1.0.2: {}
 
